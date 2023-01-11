@@ -24,10 +24,10 @@ mintAddress = "7NTQ2ipuB2vVrFH2iLW37Bq4sp9iEwzjyWKh9WYxCN6A"
 
 ##########################
 #name of the file from which wallets and amount needs to be read
-fileName = "4-airdrop.csv"
+fileName = "airdrop.csv"
 
 # the file is expected to be in a folder named receivingWallets
-with open('receivingWallets/' + fileName, 'r', encoding='UTF8') as f:
+with open('wallet/' + fileName, 'r', encoding='UTF8') as f:
 
     csv_reader = csv.reader(f, delimiter=',')
     line_count = 0
@@ -36,7 +36,7 @@ with open('receivingWallets/' + fileName, 'r', encoding='UTF8') as f:
         print(row[1])
 
         numOfTokens = float(row[1]);
-        if (numOfTokens > 300):
+        if (numOfTokens > 300000000):
             print("Not processing as num of tokens is greater than 300");
             wf = open("receivingWallets/"+ fileName + "-txn-log.txt", "a")
             wf.write("Not processing as num of tokens is greater than 300 \n")
